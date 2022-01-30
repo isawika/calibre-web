@@ -143,3 +143,16 @@ def stats():
     series = calibre_db.session.query(db.Series).count()
     return render_title_template('stats.html', bookcounter=counter, authorcounter=authors, versions=collect_stats(),
                                  categorycounter=categorys, seriecounter=series, title=_(u"Statistics"), page="stat")
+
+
+@about.route("/resources")
+def info_resources():
+    return render_title_template('resources.html')
+
+@about.route("/about")
+def info_about():
+    return render_title_template('about.html')
+
+@about.route("/contact")
+def info_contact():
+    return render_title_template('contact.html')

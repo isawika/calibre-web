@@ -40,9 +40,9 @@
           <div class="languages">
             <p>
             {% if entry.languages.__len__() > 0 %}
-              <span class="label label-default">{{_('Language')}}: {% for language in entry.languages %}{{language.language_name}}{% if not loop.last %}, {% endif %}{% endfor %}</span>
+              <span class="label" style="color:grey;">{{_('Language')}}:</span><span class="label label-default">{% for language in entry.languages %}{{language.language_name}}{% if not loop.last %}, {% endif %}{% endfor %}</span>
             {% else %}
-              <span class="label label-default">{{_('Language')}}: unknown</span>
+              <span class="label" style="color:grey;">{{_('Language')}}:</span><span class="label label-default">unknown</span>
             {% endif %}
             </p>
          </div>
@@ -138,9 +138,9 @@
           <div class="languages">
             <p>
             {% if entry.languages.__len__() > 0 %}
-              <span class="label label-default">{{_('Language')}}: {% for language in entry.languages %}{{language.language_name}}{% if not loop.last %}, {% endif %}{% endfor %}</span>
+              <span class="label" style="color:grey;">{{_('Language')}}:</span><span class="label label-default">{% for language in entry.languages %}{{language.language_name}}{% if not loop.last %}, {% endif %}{% endfor %}</span>
             {% else %}
-              <span class="label label-default">{{_('Language')}}: unknown</span>
+            <span class="label" style="color:grey;">{{_('Language')}}:</span><span class="label label-default">unknown</span>
             {% endif %}
             </p>
          </div>
