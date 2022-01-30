@@ -36,6 +36,17 @@
             {% endif %}
           {% endfor %}
         </p>
+        <p class="language">
+          <div class="languages">
+            <p>
+            {% if entry.languages.__len__() > 0 %}
+              <span class="label label-default">{{_('Language')}}: {% for language in entry.languages %}{{language.language_name}}{% if not loop.last %}, {% endif %}{% endfor %}</span>
+            {% else %}
+              <span class="label label-default">{{_('Language')}}: unknown</span>
+            {% endif %}
+            </p>
+         </div>
+        </p>
         {% if entry.series.__len__() > 0 %}
         <p class="series">
           <a href="{{url_for('web.books_list', data='series', sort_param='new', book_id=entry.series[0].id )}}">
@@ -122,6 +133,17 @@
             <span class="glyphicon glyphicon-music"></span>
             {% endif %}
           {%endfor%}
+        </p>
+        <p class="language">
+          <div class="languages">
+            <p>
+            {% if entry.languages.__len__() > 0 %}
+              <span class="label label-default">{{_('Language')}}: {% for language in entry.languages %}{{language.language_name}}{% if not loop.last %}, {% endif %}{% endfor %}</span>
+            {% else %}
+              <span class="label label-default">{{_('Language')}}: unknown</span>
+            {% endif %}
+            </p>
+         </div>
         </p>
         {% if entry.series.__len__() > 0 %}
         <p class="series">

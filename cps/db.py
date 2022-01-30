@@ -680,12 +680,17 @@ class CalibreDB():
 
     def fill_indexpage_with_archived_books(self, page, pagesize, database, db_filter, order, allow_show_archived,
                                            *join):
+        from . import get_locale
         pagesize = pagesize or self.config.config_books_per_page
         if current_user.show_detail_random():
             randm = self.session.query(Books) \
                 .filter(self.common_filters(allow_show_archived)) \
                 .order_by(func.random()) \
                 .limit(self.config.config_random_books).all()
+            for entry in randm:
+                for index in range(0, len(entry.languages)):
+                    entry.languages[index].language_name = isoLanguages.get_language_name(get_locale(), entry.languages[
+                        index].lang_code)
         else:
             randm = false()
         off = int(int(pagesize) * (page - 1))
@@ -712,6 +717,10 @@ class CalibreDB():
             entries = query.order_by(*order).offset(off).limit(pagesize).all()
         except Exception as ex:
             log.debug_or_exception(ex)
+        for entry in entries:
+            for index in range(0, len(entry.languages)):
+                entry.languages[index].language_name = isoLanguages.get_language_name(get_locale(), entry.languages[
+                    index].lang_code)
         #for book in entries:
         #    book = self.order_authors(book)
         return entries, randm, pagination
