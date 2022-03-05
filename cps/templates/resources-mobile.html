@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>{{_('Reading the Storybooks on a Mobile Device')}}</h2>
+
+  <h3>{{_('Android')}}</h3>
+  <ol>
+    <li>Open the Play Store app, and search for "pocketbook reader".</li>
+    <li>Click the "Install" button.<img src="{{ url_for('static', filename='img/custom/PocketBook-GooglePlay.jpg') }}" width="300" alt="Pocketbook app on Play Store"></img><br/></li>
+    <li>Open the PocketBook app.</li>
+    <li>When it asks for permission to "access photos, media and files on your device", choose <b>Allow</b>.</li>
+      <ul>
+        <li>If you already have ebooks in your mobile device, the app will display them in its Home page.</li>
+      </ul>
+      <br/>Now, let's make the Philippine Storybooks library available on the app.<br/><br/>
+    <li>Click on the menu icon (on the upper left), <img src="{{ url_for('static', filename='img/custom/PocketBook-menu-icon.jpg') }}" width="300" alt="menu icon"></img>
+      <br/>then select *Network Libraries* from the dropdown list.<img src="{{ url_for('static', filename='img/custom/PocketBook-menu-Network.jpg') }}" width="300" alt="menu dropdown list"></img><br/></li>
+    <li>Click the folder icon with the '+' symbol.</li>
+    <li>Enter these values in the dialog box, then click 'OK'.
+      <ul>
+        <li><b>URL</b> https://philippinestorybooks.org/opds</li>
+        <li><b>Title</b> Philippine Storybooks</li>
+      </ul>
+      <br/><img src="{{ url_for('static', filename='img/custom/PocketBook-menu-AddLibrary.jpg') }}" width="300" alt="Add library dialog box"></img><br/>
+    </li>
+    <li>You should now see Philippine Storybooks listed. Go ahead and select it.<img src="{{ url_for('static', filename='img/custom/PocketBook-library-PhilStorybooks.jpg') }}" width="300" alt="Philippine Storybooks added as Networked Library"></img></li><br/>
+    <li>You can search the Philippine Storybooks by title, Author, Language, etc. by clicking the item.<img src="{{ url_for('static', filename='img/custom/PocketBook-PhilStorybooks.jpg') }}" width="300" alt="Philippine Storybooks library with various search options"></img><br/>
+      <p>Here for example is a sample of the titles. Select any book to see more details.</p>
+      <img src="{{ url_for('static', filename='img/custom/PocketBook-Phil-titles.jpg') }}" width="300" alt="Philippine books search Alphabetically by title"></img><br/>
+    </li>
+    <li>Some books are available on both EPUB and PDF formats, while others are only available in one format. (We will make more books available as EPUB in the future.)
+      <img src="{{ url_for('static', filename='img/custom/PocketBook-Phil-BakitUmiiyak.jpg') }}" width="300" alt="Details of a selected ebook"></img><br/>
+    </li>
+  </ol>
+  
+  <h4>Tips</h4>
+  <ul>
+    <li>To avoid mobile data charges, download the books when you are connected to WiFi.</li>
+    <li>To view your downloaded books, go to the main menu and select "All books". If needed, you can filter by type such as "EPUB"</li>
+  </ul>
+  
+  <hr>
+  <h3>{{_('IOS')}}</h3>
+  <ul>
+    <li>tbd</li>
+  </ul>
+
+{% endblock %}

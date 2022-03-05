@@ -149,6 +149,10 @@ def stats():
 def info_resources():
     return render_title_template('resources.html')
 
+@about.route("/resources-mobile")
+def info_resources_mobile():
+    return render_title_template('resources-mobile.html')
+
 @about.route("/about")
 def info_about():
     return render_title_template('about.html')
